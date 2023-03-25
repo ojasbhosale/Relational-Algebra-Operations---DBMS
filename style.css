@@ -1,0 +1,470 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+html,
+body {
+    font-family: "Roboto", sans-serif;
+    line-height: 1.4;
+    scroll-behavior: smooth;
+}
+
+section {
+    scroll-margin: 7.5rem;
+}
+
+/* Header/Navbar section hai ye */
+
+.header {
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+}
+
+.header .section-1 {
+    display: flex;
+    justify-content: space-between;
+    background-color: green;
+    padding: 1rem 10rem;
+}
+
+.header .section-1 span {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.header .section-2 {
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    padding: 1rem 4rem;
+}
+
+.header .section-2 span {
+    color: white;
+    font-size: 1rem;
+}
+
+/* Home page hai ye */
+
+.home .section-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem 5rem;
+    gap: 1rem;
+}
+
+.home .section-1 h2 {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.home .section-1 p {
+    font-size: 1rem;
+    font-weight: 300;
+    padding: 1rem 1rem;
+}
+
+.home .section-2 {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 5rem;
+}
+
+.home .section-2 h2 {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.home .section-2 ul {
+    font-size: 1rem;
+    font-weight: 300;
+    padding: 1rem 1rem;
+    list-style: none;
+}
+
+.home .section-2 ul a{
+    color: black;
+}
+
+
+/* Select operation page hai ye */
+
+.divider {
+    border: .1rem solid black;
+}
+
+.select {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 5rem;
+    gap: 1rem;
+}
+
+.select h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.select p {
+    font-size: 1rem;
+    font-weight: 300;
+    padding: 1rem 1rem;
+}
+
+.select h4 {
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+table {
+    border-collapse: collapse;
+    display: flex;
+    justify-content: flex-start;
+    padding: 1rem 3rem;
+}
+
+td,th{
+    border:.09rem solid grey;
+    padding: 0.4rem;
+}
+
+th {
+    font-weight: 500;
+}
+
+/* Project operation page hai ye */
+
+.project {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 5rem;
+    gap: 1rem;
+}
+
+.project h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.project p {
+    font-size: 1rem;
+    font-weight: 300;
+    padding: 1rem 1rem;
+}
+
+.project h4 {
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+
+/* union operation page hai ye */
+
+
+.union {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 5rem;
+    gap: 1rem;
+}
+
+.union h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.union p {
+    font-size: 1rem;
+    font-weight: 300;
+    padding: 1rem 1rem;
+}
+
+.union h4 {
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.union .given-tables {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10rem;
+}
+
+/* set difference operation page hai ye */
+
+.difference {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 5rem;
+    gap: 1rem;
+}
+
+.difference h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.difference p {
+    font-size: 1rem;
+    font-weight: 300;
+    padding: 1rem 1rem;
+}
+
+.difference h4 {
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.difference .given-tables {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10rem;
+}
+
+/* set intersection operation page hai ye */
+
+.intersection {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 5rem;
+    gap: 1rem;
+}
+
+.intersection h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.intersection p {
+    font-size: 1rem;
+    font-weight: 300;
+    padding: 1rem 1rem;
+}
+
+.intersection h4 {
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.intersection .given-tables {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10rem;
+}
+
+
+/* cartesian product operation page hai ye */
+
+.cartesian-product {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 5rem;
+    gap: 1rem;
+}
+
+.cartesian-product h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.cartesian-product p {
+    font-size: 1rem;
+    font-weight: 300;
+    padding: 1rem 1rem;
+}
+
+.cartesian-product h4 {
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.cartesian-product .given-tables {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10rem;
+}
+
+
+/* rename operation page hai ye */
+
+.rename {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 5rem;
+    gap: 1rem;
+}
+
+.rename h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.rename p {
+    font-size: 1rem;
+    font-weight: 300;
+    padding: 1rem 1rem;
+}
+
+.rename ul {
+    font-size: 1rem;
+    font-weight: 300;
+    padding: 0 3rem;
+}
+
+.rename h4 {
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.rename .given-tables {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10rem;
+}
+
+
+/* ye to footer section hai bhai */
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .7rem 10rem;
+    background-color: black;
+    color: white;
+}
+
+.footer h2 {
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+.footer .section-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.footer a {
+    display: flex;
+    align-items: center;
+    border-radius: 1rem;
+    background: white;
+    font-size: 2.5rem;
+    height: 3rem;
+    text-align: center;
+}
+
+
+/* responsive banate hai chalo */
+
+@media(max-width:960px) {
+    html, body {
+        font-size: 80%;
+    }
+    .header .section-1 {
+        padding: 1rem 5rem;
+    }
+    .header .section-2 {
+        padding: 1rem 3rem;
+    }
+    .home .section-1, .home .section-2 {
+        padding: 1rem 3rem;
+    }
+    .select, .project, .union, .difference, .intersection, .cartesian-product, .rename {
+        padding: 1rem 3rem;
+    }
+    .footer {
+        padding: 0.5rem 3rem;
+    }
+}
+
+@media(max-width:670px) {
+    .header .section-1 {
+        padding: 1rem 3rem;
+    }
+    .header .section-2 {
+        padding: 1rem 1rem;
+        overflow: auto;
+        white-space: nowrap;
+    }
+    .footer {
+        font-size: 60%;
+        padding: 0.4rem 2rem;
+    }
+    .header .section-2 a {
+        display: inline-block;
+        color: white;
+        text-align: center;
+        padding: 14px;
+        text-decoration: none;
+    }
+    .union .given-tables, .difference .given-tables, .intersection .given-tables, .cartesian-product .given-tables, .rename .given-tables {
+        gap: 3rem;
+    }
+}
+
+@media(max-width:585px) {
+    .header .section-1 {
+        padding: 1rem 2rem;
+    }
+    .footer h2 {
+        font-size: 1rem;
+        font-weight: 300;
+    }
+    .home .section-1, .home .section-2, .select, .project, .union, .difference, .intersection, .cartesian-product, .rename {
+        padding: 1rem 1rem;
+    }
+    .union .given-tables {
+        display: flex;
+        flex-direction: column;
+    }
+    .difference .given-tables, .intersection .given-tables, .cartesian-product .given-tables, .rename .given-tables {
+        gap: 1rem;
+    }
+    .footer .section-2 {
+        font-size: 1rem;
+        font-weight: 300;
+    }
+    .footer a {
+        font-size: 1.3rem;
+        border-radius: 0.7;
+        height: 1.5rem;
+    }
+}
+
+@media(max-width:420px) {
+    html, body {
+        font-size: 60%;
+    }
+    .header .section-1 {
+        padding: 0.5rem 1rem;
+    }
+    .header .section-2 {
+        padding: 0.5rem;
+    }
+}
+
+/* Aur hamara code yaha khatam */

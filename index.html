@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relational Algebra Operations | DBMS</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/37040a85ab.js" crossorigin="anonymous"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header class="header">
+        <div class="section-1">
+            <a href="#"><span>Relational Algebra Operations</span></a>
+            <a href="#home"><span>Home</span></a>
+        </div>
+        <div class="section-2">
+            <a href=""><span>Operations >></span></a>
+            <a href="#select"><span>Select</span></a>
+            <a href="#project"><span>Project</span></a>
+            <a href="#union"><span>Union</span></a>
+            <a href="#difference"><span>Difference</span></a>
+            <a href="#intersection"><span>Intersection</span></a>
+            <a href="#cartesian-product"><span>Cartesian Product</span></a>
+            <a href="#rename"><span>Rename</span></a>
+        </div>
+    </header>
+    <main>
+        <section class="home" id="home">
+            <div class="section-1">
+                <div class="dbms-info">
+                    <h2>What is DBMS</h2>
+                    <p>
+                        > A Database Management System (DBMS) is a software system that is designed to manage and organize data in a structured manner. 
+                        <br>
+                        > It allows users to create, modify, and query a database, as well as manage the security and access controls for that database
+                    </p>
+                </div>
+                <div class="relational-info">
+                    <h2>Relational Algebra in DBMS</h2>
+                    <p>
+                        > Relational Algebra is a procedural query language. Relational algebra mainly provides a theoretical foundation for relational databases and SQL. 
+                        <br>
+                        > The main purpose of using Relational Algebra is to define operators that transform one or more input relations into an output relation. Given that these operators accept relations as input and produce relations as output, they can be combined and used to express potentially complex queries that transform potentially many input relations (whose data are stored in the database) into a single output relation (the query results).
+                        <br> 
+                        > As it is pure mathematics, there is no use of English Keywords in Relational Algebra and operators are represented using symbols. 
+                    </p>
+                </div>
+            </div>
+            <div class="section-2">
+                <h2>The basic operations in Relational Algebra</h2>
+                <ul>
+                    <a href="#select"><li>> Selection(σ) Operation</li></a>
+                    <a href="#project"><li>> Projection(π) Operation</li></a>
+                    <a href="#union"><li>> Union(U) Operation</li></a>
+                    <a href="#difference"><li>> Set Difference(-) Operation</li></a>
+                    <a href="#intersection"><li>> Set Intersection(∩) Operation</li></a>
+                    <a href="#cartesian-product"><li>> Cartesian Product(X) Operation</li></a>
+                    <a href="#rename"><li>> Rename(ρ) Operation</li></a>
+                </ul>
+            </div>
+        </section>
+        <div class="divider"></div>
+        <section class="select" id="select">
+            <h2>SELECT Operation in Relational Algebra</h2>
+            <div class="defination">
+                <p>
+                    > Select operation chooses the subset of tuples from the relation that satisfies the given condition mentioned in the syntax of selection. 
+                    <br>
+                    > The selection operation is also known as horizontal partitioning since it partitions the table or relation horizontally.
+                </p>
+            </div>
+            <div class="notation">
+                <h4>Notation : σ<sub>c</sub>(R)</h4>
+                <p>
+                    > where ‘c’ is selection condition which is a boolean expression(condition), we can have a single condition like Roll= 3 or combination of condition like X > 2 AND Y < 1, symbol ‘σ (sigma)’ is used to denote select(choose) operator, R is a relational algebra expression, whose result is a relation.
+                </p>
+            </div>
+            <div class="example">
+                <h4>Example : </h4>
+                <p>Given a relation Student(Roll, Name, Department, Score, Team) with the following tuples:</p>
+                <table>
+                    <tr>
+                        <th>Roll</th>
+                        <th>Name</th>
+                        <th>Department</th>
+                        <th>Score</th>
+                        <th>Team</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Akshat</td>
+                        <td>CSE</td>
+                        <td>88</td>
+                        <td>A</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Sourabh</td>
+                        <td>CSE</td>
+                        <td>92</td>
+                        <td>C</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Mayank</td>
+                        <td>CSE</td>
+                        <td>85</td>
+                        <td>C</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Aman</td>
+                        <td>CSE</td>
+                        <td>99</td>
+                        <td>A</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Ojas</td>
+                        <td>ESE</td>
+                        <td>80</td>
+                        <td>B</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Tushar</td>
+                        <td>CSE</td>
+                        <td>90</td>
+                        <td>D</td>
+                    </tr>   
+                </table>
+                <p>Select all the student of Team A :</p>
+                <p>Operation  :  σ <sub>Team = 'A'</sub> (Student)</p>
+                <table>
+                    <tr>
+                        <th>Roll</th>
+                        <th>Name</th>
+                        <th>Department</th>
+                        <th>Score</th>
+                        <th>Team</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Akshat</td>
+                        <td>CSE</td>
+                        <td>88</td>
+                        <td>A</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Aman</td>
+                        <td>CSE</td>
+                        <td>99</td>
+                        <td>A</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+        <div class="divider"></div>
+        <section class="project" id="project">
+            <h2>PROJECT Operation in Relational Algebra</h2>
+            <div class="defination">
+                <p>
+                    > Project operation selects (or chooses) certain attributes discarding other attributes. 
+                    <br>
+                    > The Project operation is also known as vertical partitioning since it partitions the relation or table vertically discarding other columns or attributes.
+                </p>
+            </div>
+            <div class="notation">
+                <h4>Notation : π<sub>A</sub>(R)</h4>
+                <p>
+                    > where ‘A’ is the attribute list, it is the desired set of attributes from the attributes of relation(R),
+                    symbol ‘π(pi)’  is used to denote the Project operator,
+                    R is generally a relational algebra expression, which results in a relation.
+                </p>
+            </div>
+            <div class="example">
+                <h4>Example : </h4>
+                <p>Given a relation Faculty (Class, Dept, Position) with the following tuples:</p>
+                <table>
+                    <tr>
+                        <th>Class</th>
+                        <th>Department</th>
+                        <th>Position</th>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>CSE</td>
+                        <td>Assistant Professor</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>ESE</td>
+                        <td>Assistant Professor</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>CSE</td>
+                        <td>Junior Professor</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>CSE</td>
+                        <td>Assistant Professor</td>
+                    </tr>
+                </table>
+                <p> Project Class and Dept from Faculty : </p>
+                <p>Operation  :  π <sub>Class, Dept</sub> (Faculty)</p>
+                <p>Result : </p>
+                <table>
+                    <tr>
+                        <th>Class</th>
+                        <th>Department</th>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>CSE</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>ESE</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>CSE</td>
+                    </tr>
+                </table>
+                <p>> Important Point : The Project operation removes duplicate tuples.</p>
+            </div>
+        </section>
+        <div class="divider"></div>
+        <section class="union" id="union">
+            <h2>SQL | UNION Operator</h2>
+            <div class="defination">
+                <p>
+                    > The UNION operator could be used to find the result-set or combination of two or more tables.
+                </p>
+            </div>
+            <div class="union-compatibility">
+                <h4>Compatibility criteria for using UNION :</h4>
+                <p>
+                    > Each table used within UNION must have the same number of columns.
+                    <br>
+                    > The columns must have same data types.
+                    <br>
+                    > The columns in each table must be in the same order.
+                </p>
+            </div>
+            <div class="union-syntax">
+                <h4>UNION syntax :</h4>
+                <p>
+                    SELECT columnnames FROM table1
+                    <br>
+                    UNION
+                    <br>
+                    SELECT columnnames FROM table2;
+                </p>
+            </div>
+            <div class="union-all-syntax">
+                <h4>UNION ALL syntax :</h4>
+                <p>
+                    SELECT columnnames FROM table1
+                    <br>
+                    UNION ALL
+                    <br>
+                    SELECT columnnames FROM table2;
+                </p>
+            </div>
+            <h4>Lets assume two tables C1 and C2 : </h4>
+            <div class="given-tables">
+                <div class="table-1">
+                    <p>C1 :</p>
+                    <table>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Salary</th>
+                            <th>City</th>
+                        </tr>
+                        <tr>
+                            <td>210</td>
+                            <td>Ram</td>
+                            <td>20000</td>
+                            <td>Jaipur</td>
+                        </tr>
+                        <tr>
+                            <td>215</td>
+                            <td>Sita</td>
+                            <td>25000</td>
+                            <td>Mumbai</td>
+                        </tr>
+                        <tr>
+                            <td>203</td>
+                            <td>Vedant</td>
+                            <td>15000</td>
+                            <td>Pune</td>
+                        </tr>
+                        <tr>
+                            <td>218</td>
+                            <td>Rahul</td>
+                            <td>30000</td>
+                            <td>Delhi</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="table-2">
+                    <p>C2 :</p>
+                    <table>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Salary</th>
+                            <th>City</th>
+                        </tr>
+                        <tr>
+                            <td>104</td>
+                            <td>Suresh</td>
+                            <td>26000</td>
+                            <td>Delhi</td>
+                        </tr>
+                        <tr>
+                            <td>135</td>
+                            <td>Keshav</td>
+                            <td>21000</td>
+                            <td>Pune</td>
+                        </tr>
+                        <tr>
+                            <td>143</td>
+                            <td>Ankit</td>
+                            <td>45000</td>
+                            <td>Punjab</td>
+                        </tr>
+                        <tr>
+                            <td>127</td>
+                            <td>Sushant</td>
+                            <td>38000</td>
+                            <td>Noida</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="example-1">
+                <h4>SQL UNION Example : </h4>
+                <p>The below SQL statement finds the cities (only unique values) from both the “C1” and the “C2” table :</p>
+                <p>
+                    SELECT City
+                    <br> 
+                    FROM C1
+                    <br>
+                    UNION
+                    <br>
+                    SELECT City
+                    <br> 
+                    FROM C2
+                    <br>
+                    ORDER BY City; 
+                </p>
+                <p>Result : </p>
+                <table>
+                    <tr>
+                        <th>City</th>
+                    </tr>
+                    <tr>
+                        <td>Delhi</td>
+                    </tr>
+                    <tr>
+                        <td>Jaipur</td>
+                    </tr>
+                    <tr>
+                        <td>Mumbai</td>
+                    </tr>
+                    <tr>
+                        <td>Noida</td>
+                    </tr>
+                    <tr>
+                        <td>Pune</td>
+                    </tr>
+                    <tr>
+                        <td>Punjab</td>
+                    </tr>
+                </table>
+            </div>
+            <p>> Important Point : The UNION operation removes duplicate tuples.</p>
+            <div class="example-2">
+                <h4>SQL UNION ALL Example : </h4>
+                <p>The below SQL statement finds the cities (duplicate values also) from both the “C1” and the “C2” table :</p>
+                <p>
+                    SELECT City
+                    <br> 
+                    FROM C1
+                    <br>
+                    UNION ALL
+                    <br>
+                    SELECT City
+                    <br> 
+                    FROM C2
+                    <br>
+                    ORDER BY City; 
+                </p>
+                <p>Result : </p>
+                <table>
+                    <tr>
+                        <th>City</th>
+                    </tr>
+                    <tr>
+                        <td>Delhi</td>
+                    </tr>
+                    <tr>
+                        <td>Delhi</td>
+                    </tr>
+                    <tr>
+                        <td>Jaipur</td>
+                    </tr>
+                    <tr>
+                        <td>Mumbai</td>
+                    </tr>
+                    <tr>
+                        <td>Noida</td>
+                    </tr>
+                    <tr>
+                        <td>Pune</td>
+                    </tr>
+                    <tr>
+                        <td>Pune</td>
+                    </tr>
+                    <tr>
+                        <td>Punjab</td>
+                    </tr>
+                </table>
+            </div>
+            <p>> Important Point : The UNION ALL operation results all tuples (including duplicates).</p>
+        </section>
+        <div class="divider"></div>
+        <section class="difference" id="difference">
+            <h2>SET DIFFERENCE Operation in Relational Algebra</h2>
+            <div class="defination">
+                <p>
+                    > The difference operation (minus) is used to retrieve the rows from one relation that are not present in another relation.
+                </p>
+            </div>
+            <div class="notation">
+                <h4>Notation : A-S </h4>
+                <p>
+                    > where, A and S are the relations, symbol ‘ – ’  is used to denote the Minus operator.
+                    <br>
+                    > The result of Intersection operation, which is denoted by A – S, is a relation that basically includes all the tuples that are present in A but not in S.
+                </p>
+            </div>
+            <div class="imp-points">
+                <h4>Important points on SET DIFFERENCE Operation : </h4>
+                <p>
+                    > The SET DIFFERENCE operation is not commutative, that means :
+                    <br>
+                        A - B != B - A
+                    <br>
+                    > In SQL, the operation EXCEPT is as same as MINUS operation here.
+                    <br>
+                    > Moreover, In SQL there is multiset operation EXCEPT ALL.
+                </p>
+            </div>
+            <h4>Lets assume two tables Student and Faculty : </h4>
+            <div class="given-tables">
+                <div class="table-1">
+                    <p>Student :</p>
+                    <table>
+                        <tr>
+                            <th>First</th>
+                            <th>Last</th>
+                        </tr>
+                        <tr>   
+                            <td>Ram</td>
+                            <td>Anand</td> 
+                        </tr>
+                        <tr>
+                            <td>Sita</td>
+                            <td>Rani</td>
+                        </tr>
+                        <tr>
+                            <td>Vedant</td>
+                            <td>Gupta</td>
+                        </tr>
+                        <tr>
+                            <td>Rahul</td>
+                            <td>Kumar</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="table-2">
+                    <p>Faculty :</p>
+                    <table>
+                        <tr>
+                            <th>FirstN</th>
+                            <th>LastN</th>
+                        </tr>
+                        <tr>   
+                            <td>Raju</td>
+                            <td>Kumar</td> 
+                        </tr>
+                        <tr>
+                            <td>Aisha</td>
+                            <td>Arora</td>
+                        </tr>
+                        <tr>
+                            <td>Rahul</td>
+                            <td>Kumar</td>
+                        </tr>
+                        <tr>
+                            <td>Lalan</td>
+                            <td>Singh</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="example">
+                <h4>Example : </h4>
+                <p> 
+                    Student MINUS Faculty : 
+                    <br>
+                    > Student - Faculty
+                </p>
+                <p>Result : </p>
+                <table>
+                    <tr>
+                        <th>First</th>
+                        <th>Last</th>
+                    </tr>
+                    <tr>   
+                        <td>Ram</td>
+                        <td>Anand</td> 
+                    </tr>
+                    <tr>
+                        <td>Sita</td>
+                        <td>Rani</td>
+                    </tr>
+                    <tr>
+                        <td>Vedant</td>
+                        <td>Gupta</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+        <div class="divider"></div>
+        <section class="intersection" id="intersection">
+            <h2>INTERSECTION Operation in Relational Algebra</h2>
+            <div class="defination">
+                <p>
+                    > The intersection operation is used to retrieve the common rows between two relations.
+                </p>
+            </div>
+            <div class="notation">
+                <h4>Notation : A ∩ S </h4>
+                <p>
+                    > where, A and S are the relations, symbol ‘∩’  is used to denote the Intersection operator.
+                    <br>
+                    > The result of Intersection operation, which is denoted by A ∩ S, is a relation that basically includes all the tuples that are present in both A an S.
+                </p>
+            </div>
+            <div class="imp-points">
+                <h4>Important points on SET INTERSECTION Operation : </h4>
+                <p>
+                    > The INTERSECTION operation is commutative, that is :
+                    <br>
+                        A ∩ B = B ∩ A
+                    <br>
+                    > The INTERSECTION is associative, that means it is applicable to any number of relation :
+                    <br>
+                        A ∩ ( B ∩ C ) = ( A ∩ B ) ∩ C
+                    <br>    
+                    > INTERSECTION can be formed using UNION and MINUS as follows :
+                    <br>
+                        A ∩ B = ((A ∪ B) - (A - B)) - (B - A)
+                    <br>
+                    > In SQL, the operation INTERSECT is as same as INTERSECTION operation here.
+                    <br>
+                    > Moreover, In SQL there is multiset operation INTERSECT ALL.
+                </p>
+            </div>
+            <h4>Lets assume two tables Student and Faculty : </h4>
+            <div class="given-tables">
+                <div class="table-1">
+                    <p>Student :</p>
+                    <table>
+                        <tr>
+                            <th>First</th>
+                            <th>Last</th>
+                        </tr>
+                        <tr>   
+                            <td>Ram</td>
+                            <td>Anand</td> 
+                        </tr>
+                        <tr>
+                            <td>Sita</td>
+                            <td>Rani</td>
+                        </tr>
+                        <tr>
+                            <td>Vedant</td>
+                            <td>Gupta</td>
+                        </tr>
+                        <tr>
+                            <td>Rahul</td>
+                            <td>Kumar</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="table-2">
+                    <p>Faculty :</p>
+                    <table>
+                        <tr>
+                            <th>FirstN</th>
+                            <th>LastN</th>
+                        </tr>
+                        <tr>   
+                            <td>Raju</td>
+                            <td>Kumar</td> 
+                        </tr>
+                        <tr>
+                            <td>Aisha</td>
+                            <td>Arora</td>
+                        </tr>
+                        <tr>
+                            <td>Rahul</td>
+                            <td>Kumar</td>
+                        </tr>
+                        <tr>
+                            <td>Lalan</td>
+                            <td>Singh</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="example">
+                <h4>Example : </h4>
+                <p> 
+                    Student INTERSECTION Faculty : 
+                    <br>
+                    > Student ∩ Faculty 
+                </p>
+                <p>Result : </p>
+                <table>
+                    <tr>
+                        <th>First</th>
+                        <th>Last</th>
+                    </tr>
+                    <tr>
+                        <td>Rahul</td>
+                        <td>Kumar</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+        <div class="divider"></div>
+        <section class="cartesian-product" id="cartesian-product">
+            <h2>CARTESIAN PRODUCT Operation in Relational Algebra</h2>
+            <div class="defination">
+                <p>
+                    > The Cartesian product operation is used to combine every row from one relation with every row from another relation. 
+                    <br>
+                    >It is used to retrieve all possible combinations of rows from the two relations.
+                </p>
+            </div>
+            <div class="notation">
+                <h4>Notation : A ✕ S </h4>
+                <p>
+                    > where A and S are the relations, the symbol ‘✕’ is used to denote the CROSS PRODUCT operator.
+                </p>
+            </div>
+            <div class="imp-points">
+                <h4>Important points on CARTESIAN PRODUCT Operation : </h4>
+                <p>
+                    > The cardinality (number of tuples) of resulting relation from a Cross Product operation is equal to the number of attributes(say m) in the first relation multiplied by the number of attributes in the second relation(say n).
+                    <br>
+                    Cardinality = m*n
+                    <br>
+                    > The Cross Product of two relation A(R1, R2, R3, …, Rp) with degree p, and B(S1, S2, S3, …, Sn) with degree n, is a relation C(R1, R2, R3, …, Rp, S1, S2, S3, …, Sn) with degree p + n attributes.
+                    <br>
+                    Degree = p+n
+                    <br>    
+                    > In SQL, CARTESIAN PRODUCT(CROSS PRODUCT) can be applied using CROSS JOIN.
+                    <br>
+                    > In general, we don’t use cartesian Product unnecessarily, which means without proper meaning we don’t use Cartesian Product. Generally, we use Cartesian Product followed by a Selection operation and comparison on the operators as shown below :
+                    <br>
+                    σ <sub>A=D</sub> (A ✕ B)
+                    <br>
+                    > CROSS PRODUCT is a binary set operation means, at a time we can apply the operation on two relations.
+                </p>
+            </div>
+            <h4>Lets assume two tables STUDENT and DETAILS : </h4>
+            <div class="given-tables">
+                <div class="table-1">
+                    <p>STUDENT :</p>
+                    <table>
+                        <tr>
+                            <th>SNO</th>
+                            <th>FNAME</th>
+                            <th>LNAME</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>   
+                            <td>Ram</td>
+                            <td>Kishan</td> 
+                        </tr>
+                        <tr>
+                            <td>2</td>   
+                            <td>Riya</td>
+                            <td>Singh</td> 
+                        </tr>
+                    </table>
+                </div>
+                <div class="table-2">
+                    <p>DETAILS :</p>
+                    <table>
+                        <tr>
+                            <th>ROLLNO</th>
+                            <th>AGE</th>
+                        </tr>
+                        <tr>   
+                            <td>5</td>
+                            <td>21</td> 
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>20</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="example">
+                <h4>Example : </h4>
+                <p> 
+                    On applying CROSS PRODUCT on STUDENT and DETAILS :  
+                    <br>
+                    > STUDENT ✕ DETAILS 
+                </p>
+                <p>Result : </p>
+                <table>
+                    <tr>
+                        <th>SNO</th>
+                        <th>FNAME</th>
+                        <th>LNAME</th>
+                        <th>ROLLNO</th>
+                        <th>AGE</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>   
+                        <td>Ram</td>
+                        <td>Kishan</td> 
+                        <td>5</td>
+                        <td>21</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>   
+                        <td>Ram</td>
+                        <td>Kishan</td> 
+                        <td>5</td>
+                        <td>21</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>   
+                        <td>Riya</td>
+                        <td>Singh</td> 
+                        <td>7</td>
+                        <td>20</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>   
+                        <td>Riya</td>
+                        <td>Singh</td> 
+                        <td>7</td>
+                        <td>20</td>
+                    </tr>
+                </table>
+            </div>
+            <p>
+                > Important Point : We can observe that the number of tuples in STUDENT relation is 2, and the number of tuples in DETAIL is 2. So the number of tuples in the resulting relation on performing CROSS PRODUCT is 2*2 = 4.
+            </p>
+        </section>
+        <div class="divider"></div>
+        <section class="rename" id="rename">
+            <h2>RENAME Operation in Relational Algebra</h2>
+            <div class="defination">
+                <p>
+                    > The RENAME operation is used to rename the output of a relation. 
+                    <br>
+                    > Sometimes it is simple and suitable to break a complicated sequence of operations and rename it as a relation with different names. Reasons to rename a relation can be many, like :
+                    <ul>
+                        <li>We may want to save the result of a relational algebra expression as a relation so that we can use it later.</li>
+                        <li>We may want to join a relation with itself, in that case, it becomes too confusing to specify which one of the tables we are talking about, in that case, we rename one of the tables and perform join operations on them.</li>
+                    </ul>
+                </p>
+            </div>
+            <div class="notation">
+                <h4>Notation : ρ <sub>X</sub> (R)</h4>
+                <p>
+                    > where the symbol ‘ρ’ is used to denote the RENAME operator and R is the result of the sequence of operation or expression which is saved with the name X.  
+                </p>
+            </div>
+            <div class="example">
+                <h4>Example 1 : </h4>
+                <p>Query to rename the relation Student as Male Student and the attributes of Student – RollNo, SName as (Sno, Name).</p>
+                <table>
+                    <tr>
+                        <th>Sno</th>
+                        <th>Name</th>
+                    </tr>
+                    <tr>
+                        <td>205</td>
+                        <td>Ram</td>
+                    </tr>
+                    <tr>
+                        <td>211</td>
+                        <td>Geeta</td>
+                    </tr>
+                </table>
+                <p>Operation  :  ρ <sub>MaleStudent(Sno, Name)</sub> π<sub>RollNo, SName</sub>(σ<sub>Condition</sub>(Student))</p>
+            </div>
+            <div class="example">
+                <h4>Example 2 : </h4>
+                <p>Query to rename the attributes Name, Age of table Department to A,B.</p>
+                <p>Operation  :  ρ <sub>(A, B)</sub> (Department)</p>
+            </div>
+            <div class="example">
+                <h4>Example 3 : </h4>
+                <p>Query to rename the table name Project to Pro and its attributes to P, Q, R.</p>
+                <p>Operation  :  ρ <sub>Pro(P, Q, R)</sub> (Project)</p>
+            </div>
+            <div class="example">
+                <h4>Example 3 : </h4>
+                <p>Query to rename the first attribute of the table Student with attributes A, B, C to P.</p>
+                <p>Operation  :  ρ <sub>(P, B, C)</sub> (Student)</p>
+            </div>
+        </section>
+        <div class="divider"></div>
+    </main>
+    <footer class="footer">
+        <div class="section-1"> 
+            <h2>Ojas Sanjay Bhosale</h2>
+        </div>
+        <div class="section-2">
+            <h2>Connect me >></h2>
+            <a href="https://www.linkedin.com/in/ojas-bhosale-51103a251">
+                <i class='bx bxl-linkedin' style='color:#3781e3' ></i>
+            </a>
+        </div>
+    </footer>
+</body>
+</html>
