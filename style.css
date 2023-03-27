@@ -19,7 +19,7 @@ body {
 }
 
 section {
-    scroll-margin: 7.5rem;
+    scroll-margin: 7.68rem;
 }
 
 /* Header/Navbar section hai ye */
@@ -348,14 +348,14 @@ th {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: .7rem 10rem;
+    padding: .5rem 10rem;
     background-color: black;
     color: white;
 }
 
 .footer h2 {
     font-size: 1.6rem;
-    font-weight: 500;
+    font-weight: 400;
 }
 
 .footer .section-2 {
@@ -364,7 +364,7 @@ th {
     align-items: center;
     gap: 1rem;
     font-size: 1.5rem;
-    font-weight: 500;
+    font-weight: 400;
 }
 
 .footer a {
@@ -411,7 +411,7 @@ th {
         white-space: nowrap;
     }
     .footer {
-        font-size: 60%;
+        font-size: 70%;
         padding: 0.4rem 2rem;
     }
     .header .section-2 a {
@@ -431,7 +431,7 @@ th {
         padding: 1rem 2rem;
     }
     .footer h2 {
-        font-size: 1rem;
+        font-size: 1.5rem;
         font-weight: 300;
     }
     .home .section-1, .home .section-2, .select, .project, .union, .difference, .intersection, .cartesian-product, .rename {
@@ -445,7 +445,7 @@ th {
         gap: 1rem;
     }
     .footer .section-2 {
-        font-size: 1rem;
+        font-size: 1.5rem;
         font-weight: 300;
     }
     .footer a {
@@ -457,13 +457,17 @@ th {
 
 @media(max-width:420px) {
     html, body {
-        font-size: 60%;
+        font-size: 70%;
     }
     .header .section-1 {
-        padding: 0.5rem 1rem;
+        padding: 1rem;
     }
     .header .section-2 {
         padding: 0.5rem;
+    }
+    .footer {
+        font-size: 60%;
+        padding: 0.4rem 1rem;
     }
 }
 
